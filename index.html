@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VERDANT & GOLD | Botanical Elixir Apothecary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Sticky Glass Navbar -->
+  <header class="navbar">
+    <div class="nav-brand-short">V&amp;G</div>
+    <a href="#" class="nav-logo">VERDANT &amp; GOLD</a>
+    <button class="regimen-trigger" id="openDrawerBtn" aria-label="Open Regimen Bag">
+      <span>Regimen</span>
+      <span class="badge" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <!-- Editorial Hero Section -->
+  <section class="hero">
+    <div class="hero-visual">
+      <div class="aurora-aura"></div>
+      <img
+        src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=80"
+        alt="Nocturne Botanical Elixir Droppers"
+        class="hero-img"
+      />
+    </div>
+    <div class="hero-content">
+      <p class="eyebrow">BATCH 04 — COLD-PRESSED NIGHT FORMULATIONS</p>
+      <h1>BOTANICAL ELIXIRS<br />OF THE NIGHT</h1>
+      <p class="hero-sub">
+        Rare bio-active plant extracts suspended in cold-pressed botanical oils.
+        Crafted for overnight cellular renewal.
+      </p>
+      <a href="#catalog" class="btn-gold">Explore Formulations</a>
+    </div>
+  </section>
+
+  <!-- Filter & Product Catalog -->
+  <main class="catalog-section" id="catalog">
+    <div class="catalog-header">
+      <h2>THE APOTHECARY</h2>
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-pill active" data-category="all">All Elixirs</button>
+        <button class="filter-pill" data-category="night-repair">Night Repair</button>
+        <button class="filter-pill" data-category="botanical-oils">Botanical Oils</button>
+        <button class="filter-pill" data-category="discovery">Discovery Sets</button>
+      </div>
+    </div>
+
+    <!-- Product Grid (Populated by JS, sample card included for instant preview) -->
+    <div class="product-grid" id="productGrid">
+      <article class="product-card">
+        <div class="card-top">
+          <span class="potency-tag">98% BIO-ACTIVE</span>
+          <span class="stock-pill">IN STOCK</span>
+        </div>
+        <div class="card-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80"
+            alt="Nocturne Overnight Elixir"
+          />
+        </div>
+        <div class="card-body">
+          <h3>NOCTURNE OVERNIGHT ELIXIR</h3>
+          <p class="notes">Blue Tansy · Bakuchiol · Cold-Pressed Marula</p>
+          <div class="potency-bar"><span style="width: 94%"></span></div>
+          <p class="price">₦28,500</p>
+          <div class="size-selector">
+            <button class="size-btn active">30ml</button>
+            <button class="size-btn">50ml</button>
+          </div>
+          <button class="btn-add">+ ADD TO REGIMEN</button>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Slide-Out WhatsApp Regimen Drawer -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="regimen-drawer" id="regimenDrawer" aria-hidden="true">
+    <div class="drawer-header">
+      <h3>YOUR REGIMEN</h3>
+      <button class="close-drawer" id="closeDrawerBtn" aria-label="Close Drawer">&times;</button>
+    </div>
+
+    <div class="drawer-items" id="drawerItems">
+      <p class="empty-msg">Your regimen is currently empty.</p>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="delivery-inputs">
+        <input type="text" id="customerName" placeholder="Your Name" />
+        <input type="text" id="deliveryCity" placeholder="Delivery City (e.g., Abuja, Lagos)" />
+      </div>
+      <div class="subtotal-row">
+        <span>SUBTOTAL</span>
+        <span class="subtotal-amount" id="subtotalAmount">₦0</span>
+      </div>
+      <button class="btn-whatsapp" id="whatsappCheckoutBtn">
+        COMPLETE ORDER VIA WHATSAPP CONCIERGE
+      </button>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
